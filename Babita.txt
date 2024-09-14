@@ -1,0 +1,49 @@
+#include<stdio.h>
+#include<conio.h>
+#define max 50
+#include<math.h>
+void main()
+{
+    float arrx[max+1],arry[max+1],diff[max+1][5],num=1.0,den=1.0;
+    float x,u,h,y;
+    int i,j,k,n;
+    printf("enter the value of n:");
+    scanf("%d",&n);
+    printf("enter values for x and y:\n");
+    for(i=0;i<n;i++)
+    scanf("%f %f",&arrx[i],&arry[i]);
+    printf("\n enter the value of x for which value of y is needed:");
+    scanf("%f",&x);
+    h=arrx[1]-arrx[0];
+    for(i=0;i<=n-1;i++)
+    diff[i][1]=arry[i+1]-arry[i];
+    for(j=2;j<5;j++)
+        for(i=0;i<=n-j;i++)
+        diff[i][j]=diff[i+1][j-1]-diff[i][j-1];
+
+    u=(x-arrx[0])/h;
+    y=arry[0];
+    for(k=1;k<5;k++)
+    {
+        num=num*(u-k+1);
+        den=den*k;
+        y=y+(num/den)*diff[0][k];
+    }
+    printf("Value Of y = %f , when x = %f", y, x);
+    getch();
+
+}
+
+
+Output::
+
+enter the value of n:5
+enter values for x and y:
+2 17
+3 46
+4 97
+5 176
+6 289
+
+ enter the value of x for which value of y is needed:2.3
+Value Of y = 23.747000 , when x = 2.300000

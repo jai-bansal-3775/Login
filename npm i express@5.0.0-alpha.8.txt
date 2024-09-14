@@ -1,0 +1,4 @@
+npm i express@5.0.0-alpha.8
+npm i -g nodemon
+npm i ejs
+npm i mongoose

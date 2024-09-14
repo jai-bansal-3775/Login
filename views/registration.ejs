@@ -1,0 +1,28 @@
+<%- include('./partials/header.ejs') %>
+
+<!-- <h1>Registration Page</h1> -->
+
+<div class="container">
+    <div class="row mt-5">
+        <h1>Registration Page</h1>
+        <hr>
+        <form method="post">
+            <div class="mb3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" required id="name" placeholder="Enter Name" name="name" />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email"  placeholder="Enter email" required name="email" />
+              <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" required class="form-control" id="password" placeholder="Password" name="password">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </div>
+</div>
+
+<%- include('./partials/footer.ejs') %>
